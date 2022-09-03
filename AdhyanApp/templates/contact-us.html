@@ -1,0 +1,104 @@
+{% include 'header.html' %}
+{% load static %}
+
+
+
+    <!--SECTION START-->
+    <section>
+        <div class="container com-sp pad-bot-70">
+            <div class="row">
+                <div class="cor about-sp">
+                    <div class="ed-about-tit">
+                        <div class="con-title">
+                            <h2>Contact <span> Us</span></h2>
+                            <p>Fusce id sem at ligula laoreet hendrerit venenatis sed purus. Ut pellentesque maximus lacus, nec pharetra augue.</p>
+                        </div>
+                    </div>
+                    <div class="pg-contact">
+                        <div class="col-md-3 col-sm-6 col-xs-12 new-con new-con1">
+                            <h2>Adhyan<span></span></h2>
+                            <p>When your Dream is Become Your Aim ! Nobody Can stop You To achieve Your Aim .</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 new-con new-con1"> <img src="{% static 'img/contact/1.html' %}" alt="">
+                            <h4>Address</h4>
+                            <p>V.T.Poddare College
+                                <br>Landmark : Next To BRTS Station</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 new-con new-con3"> <img src="{% static 'img/contact/2.html' %}" alt="">
+                            <h4>CONTACT INFO:</h4>
+                            <p> <a href="tel://0099999999" class="contact-icon">Phone: 01 234874 965478</a>
+                                <br> <a href="tel://0099999999" class="contact-icon">Mobile: 01 654874 965478</a>
+                                <br> <a href="mailto:mytestmail@gmail.com" class="contact-icon">Email: info@company.com</a> </p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 new-con new-con4"> <img src="{% static 'img/contact/3.html' %}" alt="">
+                            <h4>Website</h4>
+                            <p> <a href="#">Website: www.mycompany.com</a>
+                                <br> <a href="#">Facebook: www.facebook/my</a>
+                                <br> <a href="#">Blog: www.blog.mycompany.com</a> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION END-->
+
+    <section id="map">
+        <div class="row contact-map">
+            <!-- IFRAME: GET YOUR LOCATION FROM GOOGLE MAP -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.1503980815883!2d72.84798961458102!3d21.146412189128124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be051d2dd3459af%3A0x3312b11c699e47fe!2sVimal%20Tormal%20Poddar%20BCA%20%26%20Commerce%20College!5e0!3m2!1sen!2sin!4v1650349440275!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="container">
+                <div class="overlay-contact footer-part footer-part-form">
+                    <div class="map-head">
+                        <p>Send Us Now</p>
+                        <h2>GetIn Touch</h2>
+                        {% if msg %}
+                        <span class="footer-ser-re">{{msg}}</span>
+                        {% else %}
+                        <span class="footer-ser-re">Service Request Form</span>
+                        {% endif %}
+                    </div>
+                    <!-- ENQUIRY FORM -->
+                    <form id="contact_form" name="contact_form" action="{% url 'contact-us' %}" method="POST">
+                        {% csrf_token %}
+                        {% if request.session.email %}
+                        <ul>
+                            <li class="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
+                                <input type="text" id="f1" value="{{uid.name}}" name="name" placeholder="Name" required> </li>
+                            <li class="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
+                                <input type="text" id="f2" value="{{uid.mobile}}" name="mobile" placeholder="Phone" required> </li>
+                            <li class="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
+                                <input type="email" id="f3" value="{{uid.email}}" name="email" placeholder="Email Id" required> </li>
+                            <li class="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
+                                <input type="text" id="f4" value="{{uid.address}}" name="city" placeholder="City" required> </li>
+                            <li class="col-md-12 col-sm-12 col-xs-12 contact-input-spac">
+                                <textarea id="f5" name="des" required placeholder="Description"></textarea>
+                            </li>
+                            <li class="col-md-6">
+                                <input type="submit" value="Send"> </li>
+                        </ul>
+                        {% else %}
+                        <ul>
+                            <li class="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
+                                <input type="text" id="f1" value="" name="name" placeholder="Name" required> </li>
+                            <li class="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
+                                <input type="text" id="f2" value="" name="mobile" placeholder="Phone" required> </li>
+                            <li class="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
+                                <input type="email" id="f3" value="" name="email" placeholder="Email Id" required> </li>
+                            <li class="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
+                                <input type="text" id="f4" value="" name="city" placeholder="City" required> </li>
+                            <li class="col-md-12 col-sm-12 col-xs-12 contact-input-spac">
+                                <textarea id="f5" name="des" required placeholder="Description"></textarea>
+                            </li>
+                            <li class="col-md-6">
+                                <input type="submit" value="Send"> </li>
+                        </ul>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+{% include 'footer.html' %}

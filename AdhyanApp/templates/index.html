@@ -1,0 +1,245 @@
+{% load static %}
+{% include 'header.html' %}
+{% include 'search.html' %}
+
+
+
+    <!-- SLIDER -->
+    <section>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item slider1 active">
+                    <img src="{% static 'images/slider/1.jpg'%}" alt="">
+                    <div class="carousel-caption slider-con">
+                        <h2>Welcome to <span>The Adhyan</span></h2>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                        <a href="{% url 'all-courses' %}" class="bann-btn-1">All Courses</a><a href="{% url 'about' %}" class="bann-btn-2">Read More</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{% static 'images/slider/2.jpg'%}" alt="">
+                    <div class="carousel-caption slider-con">
+                        <h2>Admission open <span>2022</span></h2>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                        <!-- <a href="#" class="bann-btn-1">Admission</a><a href="#" class="bann-btn-2">Read More</a> -->
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{% static 'images/slider/3.jpg'%}" alt="">
+                    <div class="carousel-caption slider-con">
+                        <h2><span>Adhyan </span>"Study For Easy Life"</h2>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                        <a href="{% url 'all-courses' %}" class="bann-btn-1">All Courses</a><a href="{% url 'about' %}" class="bann-btn-2">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <i class="fa fa-chevron-left slider-arr"></i>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <i class="fa fa-chevron-right slider-arr"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- QUICK LINKS -->
+    <!-- <section>
+        <div class="container">
+            <div class="row">
+                <div class="wed-hom-ser">
+                    <ul>
+                        <li>
+                            <a href="awards.html" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="{% static 'images/icon/h-ic1.png'%}" alt=""> Academy</a>
+                        </li>
+                        <li>
+                            <a href="admission.html" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="{% static 'images/icon/h-ic2.png'%}" alt=""> Admission</a>
+                        </li>
+                        <li>
+                            <a href="all-courses.html" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="{% static 'images/icon/h-ic4.png'%}" alt=""> Courses</a>
+                        </li>
+                        <li>
+                            <a href="seminar.html" class="waves-effect waves-light btn-large wed-pop-ser-btn"><img src="{% static 'images/icon/h-ic3.png'%}" alt=""> Seminar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- DISCOVER MORE -->
+    <section>
+        <div class="container com-sp pad-bot-70">
+            <div class="row">
+                <div class="con-title">
+                    <h2>Discover <span>More</span></h2>
+                    <p>Fusce id sem at ligula laoreet hendrerit venenatis sed purus. Ut pellentesque maximus lacus, nec pharetra augue.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="ed-course">                    
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="ed-course-in">
+                            <a class="course-overlay" href="{% url 'dashboard' %}">
+                                <img src="{% static 'images/h-cam.jpg'%}" alt="">
+                                <span>Students profile</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="ed-course-in">
+                            <a class="course-overlay" href="{% url 'wish-list' %}">
+                                <img src="{% static 'images/h-res.jpg'%}" alt="">
+                                <span>Your Wish List [{{cart}}]</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="ed-course-in">
+                            <a class="course-overlay" href="{% url 'contact-us' %}">
+                                <img src="{% static 'images/h-about1.jpg'%}" alt="">
+                                <span>Contact us</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="ed-course-in">
+                            <a class="course-overlay" href="{% url 'about' %}">
+                                <img src="{% static 'images/about-us.jpg'%}" alt="" style="height:160px">
+                                <span>About us</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="row">
+        <div class="con-title">
+            <h2>Popular <span>Courses</span></h2>
+            <p>Fusce id sem at ligula laoreet hendrerit venenatis sed purus. Ut pellentesque maximus lacus, nec pharetra augue.</p>
+        </div>
+    </div>
+    {% include 'card.html' %}
+
+    
+    <section>
+        <div class="container com-sp pad-bot-0">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="ho-ev-latest ho-ev-latest-bg-1">
+                        <div class="ho-lat-ev" style="height: 85px;">
+                            <br><center><h4>Total Enquiry : {{enquiry}}</h4></center>
+                        </div>
+                    </div>
+                    <div class="ho-event ho-event-mob-bot-sp">
+                        <ul>
+                            {% for i in en %}
+                            <li>
+                                <div class="ho-ev-date" style="width: 100px;"><span>{{i.enq_time}}</span>
+                                </div>
+                                <div class="ho-ev-link">
+                                    <a href="events.html">
+                                        <h4>{{i.name}}</h4>
+                                    </a>
+                                    <p>Email : {{i.email}}</p>
+                                    <span>City : {{i.city}}</span>
+                                </div>
+                            </li>
+                            {% endfor %}
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="ho-ev-latest ho-ev-latest-bg-2">
+                        <div class="ho-lat-ev" style="height: 85px;">
+                            <br><center><h4>Total Reviews : {{review}}</h4></center>
+                        </div>
+                    </div>
+                    <div class="ho-event ho-event-mob-bot-sp">
+                        <ul>
+                            {% for i in re %}
+                            <li>
+                                <a href="{% url 'notification' %}">
+                                    <div class="ho-ev-img"><img src="{{i.student.pic.url}}" alt="">
+                                    </div>
+                                    <div class="ho-ev-link">                                        
+                                        <h4>{{i.student.name}}</h4>                                        
+                                        <h5>Course : {{i.course}}</h5>
+                                        <span>Review : {{i.msg}}</span>
+                                        <span>Date & Time : {{i.date}}</span>
+                                    </div>
+                                </a>
+                            </li>
+                            {% endfor %}
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="ho-ev-latest ho-ev-latest-bg-3">
+                        <div class="ho-lat-ev" style="height: 85px;">
+                            <br><center><h4>Just Fun</h4></center>
+                        </div>
+                    </div>
+                    <div class="ho-event ho-event-mob-bot-sp">
+                        <ul>
+                            <li>
+                                <a href="{% url 'game1' %}">
+                                <div class="ho-ev-img"><img src="{% static 'images/game.jpg'%}" alt="" style="width: 60px; height:60px;">
+                                </div>
+                                <div class="ho-ev-link" style="margin-top: 20px;">
+                                        <h4>Moon Gravity Game</h4>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'game2' %}">
+                                <div class="ho-ev-img"><img src="{% static 'images/tictac.png'%}" alt="" style="width: 60px; height:60px;">
+                                </div>
+                                <div class="ho-ev-link" style="margin-top: 20px;">
+                                        <h4>Tic Tac Toe</h4>
+                                        
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'game3' %}">
+                                <div class="ho-ev-img"><img src="{% static 'images/fw-game.png'%}" alt="" style="width: 60px; height:60px;">
+                                </div>
+                                <div class="ho-ev-link">
+                                        <h4 style="margin-top: 0px;">Chase</h4>
+                                    </div>
+                                </a>                                    
+                                </li>
+                            <li>
+                                <a href="{% url 'game4' %}">
+                                <div class="ho-ev-img"><img src="{% static 'images/2048.png'%}" alt="" style="width: 60px; height:60px;"></div>
+                                <div class="ho-ev-link" style="margin-top: 20px;">
+                                        <h4>2048 Game</h4>
+                                    </div>
+                                </a>                                    
+                            </li>
+                            <li>
+                                <a href="{% url 'game5' %}">
+                                <div class="ho-ev-img"><img src="{% static 'images/game5.png'%}" alt="" style="width: 60px; height:60px;"></div>
+                                <div class="ho-ev-link" style="margin-top: 20px;">
+                                        <h4>Astray Game</h4>
+                                    </div>
+                                </a>                                    
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    
+{% include 'footer.html' %}

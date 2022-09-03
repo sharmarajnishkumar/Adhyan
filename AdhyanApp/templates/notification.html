@@ -1,0 +1,19 @@
+{% include 'header2.html' %}
+{% load static %}
+<div class="col-md-9">
+    <h1 style="padding-left:30px;">Reviews</h1>
+    <div class="udb">
+        {% for i in re %}
+        <div class="udb-sec udb-prof">
+            <h4><img src="{{i.student.pic.url}}" alt="" /> {{i.student.name}} ({{i.date}})</h4>
+            <h6>Email : {{i.student.email}}</h6>
+            <p>{{i.msg}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+</div>
+</section>
+<!--SECTION END-->
+{% include 'footer.html' %}

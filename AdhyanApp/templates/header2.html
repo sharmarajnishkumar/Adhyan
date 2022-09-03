@@ -1,0 +1,40 @@
+{% include 'header.html' %}
+{% load static %}
+
+
+
+    <!--SECTION START-->
+    <section>
+        <div class="pro-cover">
+        </div>
+        <div class="pro-menu">
+            <div class="container">
+                <div class="col-md-9 col-md-offset-3">
+                    <ul>
+                        <li><a href="{% url 'dashboard' %}" class="pro-act">My Dashboard</a></li>
+                        <li><a href="{% url 'db-profile' %}">Profile</a></li>
+                        <li><a href="{% url 'db-courses' %}">Courses</a></li>
+                        <li><a href="{% url 'wish-list' %}">Wish-List</a></li>
+                        {% comment %} <li><a href="#">Entry</a></li> {% endcomment %}
+                        <li><a href="{% url 'notification' %}">Notifications</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="stu-db">
+            <div class="container pg-inn">
+                <div class="col-md-3">
+                    <div class="pro-user">
+                        <img src="{{uid.pic.url}}" alt="user">
+                    </div>
+                    <div class="pro-user-bio">
+                        <ul>
+                            <li>
+                                <h4>{{uid.name}}</h4>
+                            </li>
+                            <li>Student Id: {{uid.id}}</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                

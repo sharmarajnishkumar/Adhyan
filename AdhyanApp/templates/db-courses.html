@@ -1,0 +1,88 @@
+{% load static %}
+{% include 'header2.html' %}
+
+
+
+                <div class="col-md-9">
+                    <div class="udb">
+                        <div class="udb-sec udb-cour">
+                            <h4><img src="{% static 'images/icon/db2.png'%}" alt="" /> Booking Courses</h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.The point of using Lorem Ipsummaking it look like readable English.</p>
+                            <h6>Note : If you are give a Review then Click to the Course Images </h6>
+                            
+                            <div class="sdb-cours" >
+                                {% for i in book %}
+                                <ul >
+                                    <a href="#">
+                                        <li>
+                                            <a href="{% url 'review' i.course.id %}">
+                                                <div class="list-mig-like-com com-mar-bot-30">
+                                                    <div class="list-mig-lc-img" > <img  src="{{i.course.copic.url}}" style="height: 239px; width: 346px;" alt="" > <span class="home-list-pop-rat list-mi-pr">{{i.course.coduration}}</span> </div>
+                                                    <div class="list-mig-lc-con">
+                                                        <h5>{{i.course.coname}}</h5>
+                                                        
+                                                        <p>{{i.course.codepartment.headdepartment}}</p>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="main">    
+                                                    <!--cards --
+                                                   <div class="card">                       
+                                                   <div class="image">
+                                                      <img src="{{i.course.copic.url}}">
+                                                   </div>                       
+                                                   <div class="des">
+                                                    <!-- <h4>{{i.topic}}</h4> --
+                                                   </div>
+                                                   </div>
+                                                </div> -->
+                                            </a><br>
+                                            <center>
+                                            <a href="{% url 'view-course' i.course.id %}">
+                                                <button class="btn btn-primary" style="width:100%">Read Course</button>
+                                            </a></center><br>
+                                        </li>
+                                    </a>
+                                </ul>
+                                {% endfor %}                                    
+                            </div>
+                        </div>
+                        <div class="udb-sec udb-cour-stat">
+                            <h4><img src="{% static 'images/icon/db3.png'%}" alt="" /> Course Status</h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.The point of using Lorem Ipsummaking it look like readable English.</p>
+                            <div class="pro-con-table">
+                                <table class="bordered responsive-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Course ID</th>
+                                            <th>Course Name</th>
+                                            <th>Booking Date</th>
+                                            <th>Payment ID</th>
+                                            <th>Status</th>
+                                            <th>View</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        {% for books in book %}
+                                        <tr>
+                                            <td>{{books.course.id}}</td>
+                                            <td>{{books.course.coname}}</td>
+                                            <td>{{books.book_time}}</td>
+                                            <td>{{books.pay_id}}</td>
+                                            <td><span class="pro-user-act">active</span></td>
+                                            <td><a href="sdb-course-view.html" class="pro-edit">view</a></td>
+                                        </tr> 
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION END-->
+
+
+{% include 'footer.html' %}

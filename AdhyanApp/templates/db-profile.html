@@ -1,0 +1,103 @@
+{% load static %}
+{% include 'header2.html' %}
+
+                <div class="col-md-9">
+                    <div class="udb">
+
+                        <div class="udb-sec udb-prof">
+                            <h4><img src="{{uid.pic.url}}" alt="" /> My Profile</h4>
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
+                                to using 'Content here, content here', making it look like readable English.</p>
+                            <form action="{% url 'db-profile' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                                <div class="sdb-tabl-com sdb-pro-table">
+                                    <table class="responsive-table bordered">
+                                        
+                                        <tbody>
+                                            <tr>
+                                                <td>Student Name</td>
+                                                <td>:</td>
+                                                <td><input type="text" name="name" value="{{uid.name}}" style="font-size: 15px; border:none;margin-bottom: 0px;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Student Id</td>
+                                                <td>:</td>
+                                                <td><input type="text" name="id" value="{{uid.id}}" readonly style="font-size: 15px; border:none;margin-bottom: 0px;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gender</td>
+                                                <td>:</td>
+                                                <td>
+                                                    <select name="gender" style="font-size:15px; border:none; margin-bottom:0px;">
+                                                        {% if uid.gender == "Male" %}
+                                                        <option value="Male" selected>Male</option>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Other">Other</option>
+                                                        {% elif uid.gendr == "Female" %}
+                                                        <option value="Male" >Male</option>
+                                                        <option value="Female" selected>Female</option>
+                                                        <option value="Other">Other</option>
+                                                        {% else %}
+                                                        <option value="Male" >Male</option>
+                                                        <option value="Female" >Female</option>
+                                                        <option value="Other" selected>Other</option>
+                                                        {% endif %}
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Date of birth</td>
+                                                <td>:</td>
+                                                <td><input type="text" name="dob" value="{{uid.dob}}" readonly style="font-size: 15px; border:none;margin-bottom: 0px;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Eamil</td>
+                                                <td>:</td>
+                                                <td><input type="email" name="email" value="{{uid.email}}" readonly style="font-size: 15px; border:none;margin-bottom: 0px;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Phone</td>
+                                                <td>:</td>
+                                                <td><input type="text" name="mobile" value="{{uid.mobile}}" style="font-size: 15px; border:none;margin-bottom: 0px;"/></td>
+                                            </tr>                                            
+                                            <tr>
+                                                <td>Address</td>
+                                                <td>:</td>
+                                                <td><textarea name="address" style="font-size: 15px; border:none; margin-bottom: 0px;">{{uid.address}}</textarea></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Profile Photo</td>
+                                                <td>:</td>
+                                                <td><input type="file" name="pic" style="font-size: 15px; border:none;margin-bottom: 0px;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Password</td>
+                                                <td>:</td>
+                                                <td><input type="text" name="password" id="pass" value="{{uid.password}}" readonly style="font-size: 15px; border:none;margin-bottom: 0px;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Status</td>
+                                                <td>:</td>
+                                                <td><span class="db-done">Online</span> </td>
+                                            </tr>
+                                        </tbody>
+                                            
+                                        
+                                    </table>
+                                    <div class="sdb-bot-edit">
+                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+                                        {% comment %} <a href="#" class="waves-effect waves-light btn-large sdb-btn sdb-btn-edit"><i class="fa fa-pencil"></i> Edit my profile</a> {% endcomment %}
+                                        <input type="submit" class="waves-effect waves-light btn-large sdb-btn sdb-btn-edit" value="Edit my profile" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION END-->
+
+
+{% include 'footer.html' %}

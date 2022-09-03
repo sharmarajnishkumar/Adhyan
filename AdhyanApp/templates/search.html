@@ -1,0 +1,29 @@
+{% load static %}
+<div class="search-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="search-form">
+                    <form action="{% url 'all-courses' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="sf-type">
+                            <div class="sf-input">
+                                <input type="text" name="scourse" id="sf-box" placeholder="Search course and discount courses">
+                            </div>
+                            <div class="sf-list">
+                                <ul>  
+                                {% for i in courses %}    
+                                    <li><a href="{% url 'course-details' i.id %}">{{i.coname}}</a></li>
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sf-submit">
+                            <input type="submit" value="Search Course">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

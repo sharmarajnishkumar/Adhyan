@@ -1,0 +1,121 @@
+<style type="text/css">
+
+
+*{
+ margin: 0px;
+ padding: 0px;
+}
+body{
+ font-family: arial;
+}
+.main{
+
+ margin: 2%;
+}
+
+.card{
+     width: 20%;
+     display: inline-block;
+     box-shadow: 2px 2px 20px black;
+     border-radius: 5px; 
+     margin: 2%;
+    }
+
+.image img{
+  width: 100%;
+  height: 140px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+ }
+
+.title{
+ 
+  text-align: center;
+  padding: 10px;
+  
+ }
+
+h1{
+  font-size: 20px;
+ }
+
+.des{
+  padding: 0px;
+  text-align: center;
+  padding-top: 0px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+button{
+  margin-top: 40px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding:10px;
+}
+button:hover{
+  background-color: black;
+  color: white;
+  transition: .5s;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .card{
+     width: 80%;
+     display: inline-block;
+     box-shadow: 2px 2px 20px black;
+     border-radius: 5px; 
+     margin: 2%;
+    }
+}
+
+
+</style>
+<div class="main">
+
+ <!--cards -->
+ {% for i in courses %}
+<div class="card">
+
+<div class="image">
+   <img src="{{i.copic.url}}">
+</div>
+<div class="title">
+ <h1>
+    {{i.coname}}
+</h1>
+</div>
+<div class="des">
+ <h4>Technology / {{i.codepartment}}</h4>
+ <h4 style="margin-bottom: 0px;">Price : <i class="fa fa-rupee"></i> {{i.coprice}}/-</h4>
+ {% if uid == active %}
+ <a href="{% url 'payment' i.id %}"><button class="btn btn-info" style="width:120px;margin-bottom:30px;text-align:center;"><i class="fa fa-bar-chart"></i> BOOK NOW</button></a>
+ <a href="{% url 'course-details' i.id %}"><button class="btn" style="width:120px;margin-bottom:30px;text-align:center;"><i class="fa fa-eye"></i> {{i.views.all.count}} View</button></a>
+ <button type="button" onclick='myfunction({{i.id}})' class="btn" style="width:150px;margin-bottom:30px;margin-top:0px;text-align:center;" ><i class="fa fa-shopping-cart" aria-hidden="true"  ></i> Add To Cart</button>
+ {% elif i.id in buy %}
+<a href="{% url 'view-course' i.id %}"><button class="btn btn-info" style="width:120px;margin-bottom:30px;text-align:center;"><i class="fa fa-bar-chart"></i> READ NOW</button></a>
+<a href="{% url 'course-details' i.id %}"><button class="btn" style="width:120px;margin-bottom:30px;text-align:center;" disabled><i class="fa fa-eye"></i> {{i.views.all.count}} View</button></a>
+<button type="button" onclick='myfunction({{i.id}})' class="btn" style="width:150px;margin-bottom:30px;margin-top:0px;text-align:center;" disabled><i class="fa fa-shopping-cart" aria-hidden="true"  ></i> Add To Cart</button>
+{% elif i.id not in buy %}
+<a href="{% url 'payment' i.id %}"><button class="btn btn-info" style="width:120px;margin-bottom:30px;text-align:center;"><i class="fa fa-bar-chart"></i> BOOK NOW</button></a>
+<a href="{% url 'course-details' i.id %}"><button class="btn" style="width:120px;margin-bottom:30px;text-align:center;"><i class="fa fa-eye"></i> {{i.views.all.count}} View</button></a>
+<button type="button" onclick='myfunction({{i.id}})' class="btn" style="width:150px;margin-bottom:30px;margin-top:0px;text-align:center;"><i class="fa fa-shopping-cart" aria-hidden="true"  ></i> Add To Cart</button>
+{% endif %}
+</div>
+</div>
+{% endfor %}
+<script>
+  function myfunction(value){
+    data = {'id':value}
+    $.ajax({
+      url : "{% url 'cart' %}",
+      method : 'GET',
+      data : data,
+
+      success: function(response){
+        alert(response.msg)
+      }
+    })
+  }
+</script>

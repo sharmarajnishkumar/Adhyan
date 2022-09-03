@@ -1,0 +1,111 @@
+{% extends "hade.html" %}
+{% load static %}
+{% block head %}
+            <div class="breadcome-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="breadcome-list single-page-breadcome">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="breadcome-heading">
+                                            <form role="search" class="sr-input-func">
+                                                <input type="text" placeholder="Search..." class="search-int form-control">
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Area Charts</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Charts Start-->
+        <div class="charts-area mg-b-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="charts-single-pro responsive-mg-b-30">
+                            <div class="alert-title">
+                                <h2>Area Chart Fill False</h2>
+                                <p>A bar chart provides a way of showing data values. It is sometimes used to show trend data. we create a bar chart for a single dataset and render that in our page.</p>
+                            </div>
+                            <div id="bar1-chart">
+                                <canvas id="areachartfalse"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="charts-single-pro">
+                            <div class="alert-title">
+                                <h2>Area Chart Fill origin</h2>
+                                <p>A bar chart provides a way of showing data values. It is sometimes used to show trend data. we create a bar chart for a single dataset and render that in our page.</p>
+                            </div>
+                            <div id="bar2-chart">
+                                <canvas id="areachartorigin"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="charts-single-pro mg-t-30 responsive-mg-b-0">
+                            <div class="alert-title">
+                                <h2>Area Chart Fill start</h2>
+                                <p>A bar chart provides a way of showing data values. It is sometimes used to show trend data. we create a bar chart for a single dataset and render that in our page.</p>
+                            </div>
+                            <div id="bar3-chart">
+                                <canvas id="areachartfillstart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="charts-single-pro mg-t-30">
+                            <div class="alert-title">
+                                <h2>Area Chart Fill end</h2>
+                                <p>A bar chart provides a way of showing data values. It is sometimes used to show trend data. we create a bar chart for a single dataset and render that in our page.</p>
+                            </div>
+                            <div id="bar4-chart">
+                                <canvas id="areachartend"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="charts-single-pro responsive-mg-b-30 chart-ds-n-ex">
+                            <div class="alert-title">
+                                <h2>Area Chart Datasets</h2>
+                                <p>A bar chart provides a way of showing data values. It is sometimes used to show trend data. we create a bar chart for a single dataset and render that in our page.</p>
+                            </div>
+                            <div id="bar5-chart">
+                                <canvas id="areachartDatasets"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="charts-single-pro chart-ds-n-ex">
+                            <div class="alert-title">
+                                <h2>Area Chart Legend</h2>
+                                <p>A bar chart provides a way of showing data values. It is sometimes used to show trend data. we create a bar chart for a single dataset and render that in our page.</p>
+                            </div>
+                            <div id="bar6-chart">
+                                <canvas id="areachartLegend"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Charts End-->
+        {% endblock %}

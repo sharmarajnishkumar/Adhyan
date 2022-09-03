@@ -1,0 +1,135 @@
+{% extends "hade.html" %}
+{% load static %}
+{% block head %}
+            <div class="breadcome-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="breadcome-list single-page-breadcome">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="breadcome-heading">
+                                            <form role="search" class="sr-input-func">
+                                                <input type="text" placeholder="Search..." class="search-int form-control">
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Course Info</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="blog-details-area mg-b-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="blog-details-inner">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="latest-blog-single blog-single-full-view">
+                                        <div class="blog-image">
+                                            <center><a href="#"><img src="{{co.copic.url}}" style="height: auto; max-width: 100%;" alt="" /></center>
+                                            </a>
+                                                <center><div class="blog-date">
+                                                <p><span class="blog-day" style="height: 80px; "></span>{{co.codepartment.date}}</p>
+                                            </div>
+                                        </div></center>
+                                        <div class="blog-details blog-sig-details">
+                                        <center><div class="details-blog-dt blog-sig-details-dt courses-info mobile-sm-d-n">
+                                                <span><a href="#"><i class="fa fa-user"></i> <b>Course Name:</b>{{co.coname}}</a></span>
+                                                <span><a href="#"><i class="fa fa-heart"></i> <b>Course Price:</b> ₹{{co.coprice}}/-</a></span>
+                                                <span><a href="#"><i class="fa fa-comments-o"></i> <b>Professor Name:</b> {{co.codepartment.headdepartment}}</a></span>
+                                            </div></center>
+                                            <h1><a class="blog-ht" href="#">Courses Info Dummy Title</a></h1>
+                                            <p>{{co.codiscription}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="comment-head">
+                                        <h3>Index of {{co.coname}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sparkline8-graph">
+                                <div class="static-table-list">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Topic</th>
+                                                <th>Material</th>
+                                                <th>Course</th>
+                                                <th>Course Duration</th>
+                                                <th>setting</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for i in index %}
+                                            <tr>
+                                                <td>{{i.id}}</td>
+                                                <td>{{i.topic}}</td>
+                                                <td>{{i.material}}   <a href="{% url 'pdfviewer' i.id %}"><button data-toggle="tooltip" title="View" class="pd-setting-ed"><i class="fa fa-eye" aria-hidden="true"></i></button></a></td>
+                                                <td>{{i.course.coname}}</td>
+                                                <td>{{i.course.coduration}}</td>
+
+                                                <td>
+                                                    <a href="{% url 'editindex' i.id %}"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                                    <a href="{% url 'deleteindex' i.id %}"><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="lead-head">
+                                        <h3>Leave A Comment</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="coment-area">
+                                    <form id="comment" action="#" class="comment">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 blog-res-mg-bt">
+                                            <div class="form-group">
+                                                <input name="name" class="responsive-mg-b-10" type="text" placeholder="Name" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <input name="email" type="text" placeholder="Email" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <textarea name="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                            </div>
+                                            <div class="payment-adress comment-stn">
+                                                <button type="submit" class="btn btn-primary waves-effect waves-light">Send</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}

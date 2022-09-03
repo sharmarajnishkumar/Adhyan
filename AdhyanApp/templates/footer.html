@@ -1,0 +1,88 @@
+    {% load static %}
+    <!-- FOOTER -->
+    <section class="wed-hom-footer">
+        
+        <div class="container">            
+            <div class="row wed-foot-link">
+                <div class="col-md-4 foot-tc-mar-t-o">
+                    <h4>Top Courses</h4>
+                    <ul>
+                        {% for i in courses %}
+                        <li><a href="{% url 'course-details' i.id %}">{{i.coname}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-md-4 foot-tc-mar-t-o">
+                    <h4>Get In Touch</h4>
+                    <h5 style="color: white;">Shri Mahavir Vidyamandir Trust</h5>
+                    <h4 style="color: white; padding-bottom: 0px;">Vimal Tormal Poddar BCA College</h4>
+                    <p style="margin: 0px;">Address: Pramukh Park, Next to BRC Colony, Pandesara, Surat</p>
+                    <p style="margin: 0px;">Phone: <a href="#!">0261-2893404</a></p>
+                    <p style="margin: 0px;">Email: <a href="#!">vtpbca@gmail.com</a></p>
+                    <p style="margin: 0px;">Website: <a href="#!">www.smvmt.com</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h4>HELP & SUPPORT</h4>
+                    <ul>
+                        <li><a href="#">24x7 Live help</a>
+                        </li>
+                        <li><a href="{% url 'contact-us' %}">Contact us</a>
+                        </li>
+                        <li><a href="">Feedback</a>
+                        </li>
+                        <li><a href="#">FAQs</a>
+                        </li>
+                        <li><a href="#">Safety Tips</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row wed-foot-link-1">
+                <!-- <div class="col-md-4 foot-tc-mar-t-o">
+                    <h4>Get In Touch</h4>
+                    <p>Address: 28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</p>
+                    <p>Phone: <a href="#!">+101-1231-4321</a></p>
+                    <p>Email: <a href="#!">info@edu.com</a></p>
+                </div> -->
+                <div class="col-md-4">
+                    <h4>DOWNLOAD OUR FREE MOBILE APPS</h4>
+                    <ul>
+                        <li><a href="#"><span class="sprite sprite-android"></span></a>
+                        </li>
+                        <li><a href="#"><span class="sprite sprite-ios"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>SOCIAL MEDIA</h4>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    
+    
+
+    <!--Import jQuery before materialize.js-->
+    <script src="{% static 'js/main.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/materialize.min.js'%}"></script>
+    <script src="{% static 'js/custom.js'%}"></script>
+   
+</body>
+
+</html>

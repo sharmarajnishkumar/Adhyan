@@ -1,0 +1,1123 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Adhyan Study For Easy Life</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.transitions.css' %}">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <!-- educate icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/educate-custon-icon.css' %}">
+    <!-- morrisjs CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/morrisjs/morris.css' %}">
+    <!-- x-editor CSS
+		============================================ -->
+        <link rel="stylesheet" href="{% static 'css/editor/select2.css' %}">
+        <link rel="stylesheet" href="{% static 'css/editor/datetimepicker.css' %}">
+        <link rel="stylesheet" href="{% static 'css/editor/bootstrap-editable.css' %}">
+        <link rel="stylesheet" href="{% static 'css/editor/x-editor-style.css' %}">
+        <!-- normalize CSS
+            ============================================ -->
+        <link rel="stylesheet" href="{% static 'css/data-table/bootstrap-table.css' %}">
+        <link rel="stylesheet" href="{% static 'css/data-table/bootstrap-editable.css' %}">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/scrollbar/jquery.mCustomScrollbar.min.css' %}">
+    <!-- metisMenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/metisMenu/metisMenu.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/metisMenu/metisMenu-vertical.css' %}">
+    <!-- calendar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/calendar/fullcalendar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/calendar/fullcalendar.print.min.css' %}">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'st.css' %}">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+</head>
+<body>
+    <!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+    <!-- Start Left menu area -->
+    <div class="left-sidebar-pro">
+        <nav id="sidebar" class="">
+            <div class="sidebar-header">
+                <a href="{% url 'aindex' %}"><img class="main-logo" src="{% static 'img/logo/logo.png' %}" alt="" /></a>
+                <strong><a href="{% url 'aindex' %}"><img src="{% static 'img/logo/logosn.png' %}" alt="" /></a></strong>
+
+
+            </div>
+            <div class="left-custom-menu-adp-wrap comment-scrollbar">
+                <nav class="sidebar-nav left-sidebar-menu-pro">
+                    <ul class="metismenu" id="menu1">
+                        <li class="active">
+                            <a class="has-arrow" href="{% url 'aindex' %}">
+								   <span class="educate-icon educate-home icon-wrap"></span>
+								   <span class="mini-click-non">Education</span>
+								</a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Dashboard v.1" href="{% url 'aindex' %}"><span class="mini-sub-pro">Dashboard</span></a></li>
+                                <!-- <li><a title="Analytics" href="{% url 'analytics' %}"><span class="mini-sub-pro">Analytics</span></a></li> -->
+                                <!-- <li><a title="Widgets" href="{% url 'widgets' %}"><span class="mini-sub-pro">Widgets</span></a></li> -->
+                            </ul>
+                        </li>
+                        <li>
+                            <!-- <a title="Landing Page" href="{% url 'events' %}" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Event</span></a> -->
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="{% url 'allstudents' %}" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Students</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="All Students" href="{% url 'allstudents' %}"><span class="mini-sub-pro">All Students</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="{% url 'allcourses' %}" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Courses</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="All Courses" href="{% url 'allcourses' %}"><span class="mini-sub-pro">All Courses</span></a></li>
+                                <li><a title="Add Courses" href="{% url 'addcourse' %}"><span class="mini-sub-pro">Add Course</span></a></li>
+                                <li><a title="Product Payment" href="{% url 'coursepayment' %}"><span class="mini-sub-pro">Courses Payment</span></a></li>
+                                <!-- <li><a title="All Courses" href="{% url 'allindex' %}"><span class="mini-sub-pro">All Index</span></a></li> -->
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="{% url 'mailbox' %}" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">All Index</span></a>
+
+                            <ul class="submenu-angle" aria-expanded="false">
+                                    <!-- <li><a title="All Courses" href="{% url 'allcourses' %}"><span class="mini-sub-pro">All Courses</span></a></li>
+                                    <li><a title="Add Courses" href="{% url 'addcourse' %}"><span class="mini-sub-pro">Add Course</span></a></li>
+                                    <li><a title="Product Payment" href="{% url 'coursepayment' %}"><span class="mini-sub-pro">Courses Payment</span></a></li> -->
+                                <li><a title="All Courses" href="{% url 'allindex' %}"><span class="mini-sub-pro">Indexs</span></a></li>
+                            </ul>
+                        </li>
+                        <!-- <li>
+                            <a class="has-arrow" href="{% url 'allcourses' %}" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Library</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="All Library" href="{% url 'libraryassets' %}"><span class="mini-sub-pro">Library Assets</span></a></li>
+                                <li><a title="Add Library" href="{% url 'addlibraryassets' %}"><span class="mini-sub-pro">Add Library Asset</span></a></li>
+                                <li><a title="Edit Library" href="{% url 'editlibraryassets' %}"><span class="mini-sub-pro">Edit Library Asset</span></a></li>
+                            </ul>
+                        </li> -->
+                        <li>
+                            <a class="has-arrow" href="{% url 'allcourses' %}" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Departments</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Departments List" href="{% url 'department' %}"><span class="mini-sub-pro">Departments List</span></a></li>
+                                <li><a title="Add Departments" href="{% url 'adddepartment' %}"><span class="mini-sub-pro">Add Departments</span></a></li>
+                            </ul>
+                        </li>
+                        <!-- <li>
+                            <a class="has-arrow" href="{% url 'mailbox' %}" aria-expanded="false"><span class="educate-icon educate-message icon-wrap"></span> <span class="mini-click-non">Mailbox</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Inbox" href="{% url 'mailbox' %}"><span class="mini-sub-pro">Inbox</span></a></li>
+                                <li><a title="View Mail" href="{% url 'mailboxview' %}"><span class="mini-sub-pro">View Mail</span></a></li>
+                                <li><a title="Compose Mail" href="{% url 'mailboxcompose' %}"><span class="mini-sub-pro">Compose Mail</span></a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li>
+                            <a class="has-arrow" href="{% url 'mailbox' %}" aria-expanded="false"><span class="educate-icon educate-interface icon-wrap"></span> <span class="mini-click-non">Interface</span></a>
+                            <ul class="submenu-angle interface-mini-nb-dp" aria-expanded="false">
+                                <li><a title="Google Map" href="{% url 'googlemap' %}"><span class="mini-sub-pro">Google Map</span></a></li>
+                                <li><a title="Data Maps" href="{% url 'datamaps' %}"><span class="mini-sub-pro">Data Maps</span></a></li>
+                                <li><a title="X-Editable" href="{% url 'xeditable' %}"><span class="mini-sub-pro">X-Editable</span></a></li>
+                                <li><a title="Code Editor" href="{% url 'codeeditor' %}"><span class="mini-sub-pro">Code Editor</span></a></li>
+                                <li><a title="Tree View" href="{% url 'treeview' %}"><span class="mini-sub-pro">Tree View</span></a></li>
+                                <li><a title="Preloader" href="{% url 'preloader' %}"><span class="mini-sub-pro">Preloader</span></a></li>
+                                <li><a title="Images Cropper" href="{% url 'imagescropper' %}"><span class="mini-sub-pro">Images Cropper</span></a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li>
+                            <a class="has-arrow" href="{% url 'mailbox' %}" aria-expanded="false"><span class="educate-icon educate-charts icon-wrap"></span> <span class="mini-click-non">Charts</span></a>
+                            <ul class="submenu-angle chart-mini-nb-dp" aria-expanded="false">
+                                <li><a title="Bar Charts" href="{% url 'barcharts' %}"><span class="mini-sub-pro">Bar Charts</span></a></li>
+                                <li><a title="Line Charts" href="{% url 'linecharts' %}"><span class="mini-sub-pro">Line Charts</span></a></li>
+                                <li><a title="Area Charts" href="{% url 'areacharts' %}"><span class="mini-sub-pro">Area Charts</span></a></li>
+                                <li><a title="Rounded Charts" href="{% url 'roundedchart' %}"><span class="mini-sub-pro">Rounded Charts</span></a></li>
+                                <li><a title="C3 Charts" href="{% url 'c3' %}"><span class="mini-sub-pro">C3 Charts</span></a></li>
+                                <li><a title="Sparkline Charts" href="{% url 'sparkline' %}"><span class="mini-sub-pro">Sparkline Charts</span></a></li>
+                                <li><a title="Peity Charts" href="{% url 'peity' %}"><span class="mini-sub-pro">Peity Charts</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="{% url 'mailbox' %}" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Data Tables</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Peity Charts" href="{% url 'statictable' %}"><span class="mini-sub-pro">Static Table</span></a></li>
+                                <li><a title="Data Table" href="{% url 'datatable' %}"><span class="mini-sub-pro">Data Table</span></a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li>
+                            <a class="has-arrow" href="{% url 'mailbox' %}" aria-expanded="false"><span class="educate-icon educate-form icon-wrap"></span> <span class="mini-click-non">Forms Elements</span></a>
+                            <ul class="submenu-angle form-mini-nb-dp" aria-expanded="false">
+                                <li><a title="Basic Form Elements" href="{% url 'basicformelement' %}"><span class="mini-sub-pro">Bc Form Elements</span></a></li>
+                                <li><a title="Advance Form Elements" href="{% url 'advanceformelement' %}"><span class="mini-sub-pro">Ad Form Elements</span></a></li>
+                                <li><a title="Password Meter" href="{% url 'passwordmeter' %}"><span class="mini-sub-pro">Password Meter</span></a></li>
+                                <li><a title="Multi Upload" href="{% url 'multiupload' %}"><span class="mini-sub-pro">Multi Upload</span></a></li>
+                                <li><a title="Text Editor" href="{% url 'tinymc' %}"><span class="mini-sub-pro">Text Editor</span></a></li>
+                                <li><a title="Dual List Box" href="dual-list-box{% url 'mailbox' %}"><span class="mini-sub-pro">Dual List Box</span></a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li>
+                            <a class="has-arrow" href="{% url 'mailbox' %}" aria-expanded="false"><span class="educate-icon educate-apps icon-wrap"></span> <span class="mini-click-non">App views</span></a>
+                            <ul class="submenu-angle app-mini-nb-dp" aria-expanded="false">
+                                <li><a title="Notifications" href="{% url 'notifications' %}"><span class="mini-sub-pro">Notifications</span></a></li>
+                                <li><a title="Alerts" href="{% url 'alerts' %}"><span class="mini-sub-pro">Alerts</span></a></li>
+                                <li><a title="Modals" href="{% url 'modals' %}"><span class="mini-sub-pro">Modals</span></a></li>
+                                <li><a title="Buttons" href="{% url 'buttons' %}"><span class="mini-sub-pro">Buttons</span></a></li>
+                                <li><a title="Tabs" href="{% url 'tabs' %}"><span class="mini-sub-pro">Tabs</span></a></li>
+                                <li><a title="Accordion" href="{% url 'accordion' %}"><span class="mini-sub-pro">Accordion</span></a></li>
+                            </ul>
+                        </li> -->
+                        <li id="removable">
+                            <a class="has-arrow" href="#" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap"></span> <span class="mini-click-non">Pages</span></a>
+                            <ul class="submenu-angle page-mini-nb-dp" aria-expanded="false">
+                                <li><a title="signin" href="{% url 'signin' %}"><span class="mini-sub-pro">signin</span></a></li>
+                                <li><a title="signup" href="{% url 'signup' %}"><span class="mini-sub-pro">signup</span></a></li>
+                                <li><a title="Lock" href="{% url 'lock' %}"><span class="mini-sub-pro">Lock</span></a></li>
+                                <li><a title="Password Recovery" href="{% url 'passwordrecovery' %}"><span class="mini-sub-pro">Password Recovery</span></a></li>
+                                <li><a title="404 Page" href="{% url 'p404' %}"><span class="mini-sub-pro">404 Page</span></a></li>
+                                <li><a title="500 Page" href="{% url 'p500' %}"><span class="mini-sub-pro">500 Page</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
+    </div>
+
+    <div class="all-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="logo-pro">
+                        <a href="{% url 'aindex' %}"><img class="main-logo" src="{% static 'img/logo/logo.png' %}" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-advance-area">
+            <div class="header-top-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="header-top-wraper">
+                                <div class="row">
+                                    <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
+                                        <div class="menu-switcher-pro">
+                                            <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
+													<i class="educate-icon educate-nav"></i>
+												</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
+                                        <div class="header-top-menu tabl-d-n">
+                                            <ul class="nav navbar-nav mai-top-nav">
+                                                <li class="nav-item"><a href="#" class="nav-link">Home</a>
+                                                </li>
+                                                <li class="nav-item"><a href="#" class="nav-link">About</a>
+                                                </li>
+                                                <li class="nav-item"><a href="#" class="nav-link">Services</a>
+                                                </li>
+                                                <li class="nav-item dropdown res-dis-nn">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Project <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
+                                                    <div role="menu" class="dropdown-menu animated zoomIn">
+                                                        <a href="#" class="dropdown-item">Documentation</a>
+                                                        <a href="#" class="dropdown-item">Expert Backend</a>
+                                                        <a href="#" class="dropdown-item">Expert FrontEnd</a>
+                                                        <a href="#" class="dropdown-item">Contact Support</a>
+                                                    </div>
+                                                </li>
+                                                <li class="nav-item"><a href="#" class="nav-link">Support</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                        <div class="header-right-info">
+                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                                <li class="nav-item dropdown">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-message edu-chat-pro" aria-hidden="true"></i><span class="indicator-ms"></span></a>
+                                                    <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
+                                                        <div class="message-single-top">
+                                                            <h1>Message</h1>
+                                                        </div>
+                                                        <ul class="message-menu">
+                                                            {% for i in enq%}
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="message-content">
+                                                                        <h2>{{i.name}}</h2>   
+                                                                        <h2>{{i.email}}</h2>
+                                                                        <h2>{{i.date}}</h2>
+                                                                        <p>{{i.des}}</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li><br>   
+                                                            {% endfor %}
+                                                            <!-- <li>
+                                                                <a href="#">
+                                                                    
+                                                                    <div class="message-content">
+                                                                        <span class="message-date">16 Sept</span>
+                                                                        <h2>Sulaiman din</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    
+                                                                    <div class="message-content">
+                                                                        <span class="message-date">16 Sept</span>
+                                                                        <h2>Victor Jara</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="message-img">
+                                                                        <img src="{% static 'img/contact/2.jpg' %}" alt="">
+                                                                    </div>
+                                                                    <div class="message-content">
+                                                                        <span class="message-date">16 Sept</span>
+                                                                        <h2>Victor Jara</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li> -->
+                                                        </ul>
+
+                                                        <div class="message-view">
+                                                            <a href="{% url 'Enquiry' %}">View All Messages</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
+                                                    <div role="menu" class="notification-author dropdown-menu animated zoomIn">
+                                                        <div class="notification-single-top">
+                                                            <h1>Notifications</h1>
+                                                        </div>
+                                                        <ul class="notification-menu">
+                                                            {% for i in review%}
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i aria-hidden="true"><img src="{{i.student.pic.url}}"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <h2>{{i.student.name}}</h2>
+                                                                        <p style="width: 200px; margin-left:35px;">{{i.msg}}</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            {% endfor %}
+                                                            <!-- <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="fa fa-cloud edu-cloud-computing-down" aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Sulaiman din</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="fa fa-eraser edu-shield" aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Victor Jara</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <div class="notification-icon">
+                                                                        <i class="fa fa-line-chart edu-analytics-arrow" aria-hidden="true"></i>
+                                                                    </div>
+                                                                    <div class="notification-content">
+                                                                        <span class="notification-date">16 Sept</span>
+                                                                        <h2>Victor Jara</h2>
+                                                                        <p>Please done this project as soon possible.</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li> -->
+                                                        </ul>
+                                                        <div class="notification-view">
+                                                            <a href="{% url 'showreview' %}">View All Notification</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+															<img src="{{uid.pic.url}}" alt="" />
+															<span class="admin-name">{{uid.name}}</span>
+															<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
+														</a>
+                                                    <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
+                                                        <!-- <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a> -->
+                                                        </li>
+                                                        <li><a href="{% url 'myprofile' %}"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
+                                                        </li>
+                                                        <li><a href="{% url 'passwordrecovery' %}"><span class="edu-icon edu-money author-log-ic"></span>Change Password</a>
+                                                        </li>
+                                                        <li><a href="{% url 'alogout' %}"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-menu"></i></a>
+
+                                                    <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
+                                                        <ul class="nav nav-tabs custon-set-tab">
+                                                            <li class="active"><a data-toggle="tab" href="#Notes">Reviews</a>
+                                                            </li>
+                                                            <li><a data-toggle="tab" href="#Projects">Enquiry</a>
+                                                            </li>
+                                                            <!-- <li><a data-toggle="tab" href="#Settings">Settings</a>
+                                                            </li> -->
+                                                        </ul>
+
+                                                        <div class="tab-content custom-bdr-nt">
+                                                            <div id="Notes" class="tab-pane fade in active">
+                                                                <div class="notes-area-wrap">
+                                                                    <div class="note-heading-indicate">
+                                                                        <h2><i class="fa fa-comments-o"></i> Latest Notes</h2>
+                                                                        <p>You have {{treview}} new message.</p>
+                                                                    </div>
+                                                                    <div class="notes-list-area notes-menu-scrollbar">
+                                                                        <ul class="notes-menu-list">
+                                                                        {% for i in review%}
+
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{{i.student.pic.url}}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> {{i.msg}}</p>
+                                                                                            <span>{{i.date}}</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                        {% endfor %}
+                                                                            <!-- <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{% static 'img/contact/1.jpg' %}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{% static 'img/contact/2.jpg' %}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{% static 'img/contact/3.jpg' %}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{% static 'img/contact/4.jpg' %}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{% static 'img/contact/1.jpg' %}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{% static 'img/contact/2.jpg' %}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{% static 'img/contact/1.jpg' %}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{% static 'img/contact/2.jpg' %}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="notes-list-flow">
+                                                                                        <div class="notes-img">
+                                                                                            <img src="{% static 'img/contact/3.jpg' %}" alt="" />
+                                                                                        </div>
+                                                                                        <div class="notes-content">
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                                                            <span>Yesterday 2:45 pm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li> -->
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="Projects" class="tab-pane fade">
+                                                                <div class="projects-settings-wrap">
+                                                                    <div class="note-heading-indicate">
+                                                                        <h2><i class="fa fa-cube"></i> Latest projects</h2>
+                                                                        <p> You have {{enq_co}} projects. 5 not completed.</p>
+                                                                    </div>
+                                                                    <div class="project-st-list-area project-st-menu-scrollbar">
+                                                                        <ul class="projects-st-menu-list">
+                                                                        {% for i in enq%}
+                                                                            <hr>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>{{i.name}}</h2>
+                                                                                            <h5>{{i.email}}</h5>
+                                                                                            <p> {{i.des}}</p>
+                                                                                            <span class="project-st-time">{{i.date}}</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content">
+                                                                                            <p>{{i.enq_time}}</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                        {% endfor %}
+                                                                            <!-- <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Software Development</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">2 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content project-rating-cl">
+                                                                                            <p>Completion with: 68%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 68%;" class="progress-bar hd-tp-2"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Graphic Design</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">3 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content">
+                                                                                            <p>Completion with: 78%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 78%;" class="progress-bar hd-tp-3"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Web Design</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">4 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content project-rating-cl2">
+                                                                                            <p>Completion with: 38%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 38%;" class="progress-bar progress-bar-danger hd-tp-4"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Business Card</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">5 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content">
+                                                                                            <p>Completion with: 28%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 28%;" class="progress-bar progress-bar-danger hd-tp-5"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Ecommerce Business</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">6 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content project-rating-cl">
+                                                                                            <p>Completion with: 68%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 68%;" class="progress-bar hd-tp-6"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Woocommerce Plugin</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">7 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content">
+                                                                                            <p>Completion with: 78%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 78%;" class="progress-bar"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <div class="project-list-flow">
+                                                                                        <div class="projects-st-heading">
+                                                                                            <h2>Wordpress Theme</h2>
+                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                                                                            <span class="project-st-time">9 hours ago</span>
+                                                                                        </div>
+                                                                                        <div class="projects-st-content project-rating-cl2">
+                                                                                            <p>Completion with: 38%</p>
+                                                                                            <div class="progress progress-mini">
+                                                                                                <div style="width: 38%;" class="progress-bar progress-bar-danger"></div>
+                                                                                            </div>
+                                                                                            <p>Project end: 4:00 pm - 12.06.2014</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </li> -->
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="Settings" class="tab-pane fade">
+                                                                <div class="setting-panel-area">
+                                                                    <div class="note-heading-indicate">
+                                                                        <h2><i class="fa fa-gears"></i> Settings Panel</h2>
+                                                                        <p> You have 20 Settings. 5 not completed.</p>
+                                                                    </div>
+                                                                    <ul class="setting-panel-list">
+                                                                        <li>
+                                                                            <div class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <h2>Show notifications</h2>
+                                                                                    <div class="ts-custom-check">
+                                                                                        <div class="onoffswitch">
+                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
+                                                                                            <label class="onoffswitch-label" for="example">
+																									<span class="onoffswitch-inner"></span>
+																									<span class="onoffswitch-switch"></span>
+																								</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <h2>Disable Chat</h2>
+                                                                                    <div class="ts-custom-check">
+                                                                                        <div class="onoffswitch">
+                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
+                                                                                            <label class="onoffswitch-label" for="example3">
+																									<span class="onoffswitch-inner"></span>
+																									<span class="onoffswitch-switch"></span>
+																								</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <h2>Enable history</h2>
+                                                                                    <div class="ts-custom-check">
+                                                                                        <div class="onoffswitch">
+                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
+                                                                                            <label class="onoffswitch-label" for="example4">
+																									<span class="onoffswitch-inner"></span>
+																									<span class="onoffswitch-switch"></span>
+																								</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <h2>Show charts</h2>
+                                                                                    <div class="ts-custom-check">
+                                                                                        <div class="onoffswitch">
+                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
+                                                                                            <label class="onoffswitch-label" for="example7">
+																									<span class="onoffswitch-inner"></span>
+																									<span class="onoffswitch-switch"></span>
+																								</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <h2>Update everyday</h2>
+                                                                                    <div class="ts-custom-check">
+                                                                                        <div class="onoffswitch">
+                                                                                            <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example2">
+                                                                                            <label class="onoffswitch-label" for="example2">
+																									<span class="onoffswitch-inner"></span>
+																									<span class="onoffswitch-switch"></span>
+																								</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <h2>Global search</h2>
+                                                                                    <div class="ts-custom-check">
+                                                                                        <div class="onoffswitch">
+                                                                                            <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example6">
+                                                                                            <label class="onoffswitch-label" for="example6">
+																									<span class="onoffswitch-inner"></span>
+																									<span class="onoffswitch-switch"></span>
+																								</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="checkbox-setting-pro">
+                                                                                <div class="checkbox-title-pro">
+                                                                                    <h2>Offline users</h2>
+                                                                                    <div class="ts-custom-check">
+                                                                                        <div class="onoffswitch">
+                                                                                            <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example5">
+                                                                                            <label class="onoffswitch-label" for="example5">
+																									<span class="onoffswitch-inner"></span>
+																									<span class="onoffswitch-switch"></span>
+																								</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul class="mobile-menu-nav">
+                                        <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <ul class="collapse dropdown-header-top">
+                                                <li><a href="{% url 'aindex' %}">Dashboard v.1</a></li>
+                                                <li><a href="{% url 'analytics' %}">Analytics</a></li>
+                                                <li><a href="{% url 'widgets' %}">Widgets</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#demopro" href="#">Students <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <ul id="demopro" class="collapse dropdown-header-top">
+                                                <li><a href="{% url 'allstudents' %}">All Students</a>
+                                                </li>
+                                                <li><a href="{% url 'addstudent' %}">Add Student</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#democrou" href="#">Courses <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <ul id="democrou" class="collapse dropdown-header-top">
+                                                <li><a href="{% url 'allcourses' %}">All Courses</a>
+                                                </li>
+                                                <li><a href="{% url 'addcourse' %}">Add Course</a>
+                                                </li>
+                                                <li><a href="{% url 'coursepayment' %}">Courses Payment</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#demolibra" href="#">Library <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <ul id="demolibra" class="collapse dropdown-header-top">
+                                                <li><a href="{% url 'libraryassets' %}">Library Assets</a>
+                                                </li>
+                                                <li><a href="{% url 'addlibraryassets' %}">Add Library Asset</a>
+                                                </li>
+                                                <li><a href="{% url 'editlibraryassets' %}">Edit Library Asset</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#demodepart" href="#">Departments <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <ul id="demodepart" class="collapse dropdown-header-top">
+                                                <li><a href="{% url 'department' %}">Departments List</a>
+                                                </li>
+                                                <li><a href="'{% url 'adddepartment' %}">Add Departments</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#demo" href="#">Mailbox <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <ul id="demo" class="collapse dropdown-header-top">
+                                                <li><a href="{% url 'mailbox' %}">Inbox</a>
+                                                </li>
+                                                <li><a href="{% url 'mailboxview' %}">View Mail</a>
+                                                </li>
+                                                <li><a href="{% url 'mailboxcompose' %}">Compose Mail</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">Interface <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
+                                                <li><a href="{% url 'googlemap' %}">Google Map</a>
+                                                </li>
+                                                <li><a href="{% url 'datamaps' %}">Data Maps</a>
+                                                </li>
+                                                <li><a href="{% url 'xeditable' %}">X-Editable</a>
+                                                </li>
+                                                <li><a href="{% url 'codeeditor' %}">Code Editor</a>
+                                                </li>
+                                                <li><a href="{% url 'treeview' %}">Tree View</a>
+                                                </li>
+                                                <li><a href="{% url 'preloader' %}">Preloader</a>
+                                                </li>
+                                                <li><a href="{% url 'imagescropper' %}">Images Cropper</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Chartsmob" href="#">Charts <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <ul id="Chartsmob" class="collapse dropdown-header-top">
+                                                <li><a href="{% url 'barcharts' %}">Bar Charts</a>
+                                                </li>
+                                                <li><a href="{% url 'linecharts' %}">Line Charts</a>
+                                                </li>
+                                                <li><a href="{% url 'areacharts' %}">Area Charts</a>
+                                                </li>
+                                                <li><a href="{% url 'roundedchart' %}">Rounded Charts</a>
+                                                </li>
+                                                <li><a href="{% url 'c3' %}">C3 Charts</a>
+                                                </li>
+                                                <li><a href="{% url 'sparkline' %}">Sparkline Charts</a>
+                                                </li>
+                                                <li><a href="{% url 'peity' %}">Peity Charts</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Tablesmob" href="#">Tables <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <ul id="Tablesmob" class="collapse dropdown-header-top">
+                                                <li><a href="{% url 'statictable' %}">Static Table</a>
+                                                </li>
+                                                <li><a href="{% url 'datatable' %}">Data Table</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#formsmob" href="#">Forms <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <ul id="formsmob" class="collapse dropdown-header-top">
+                                                <li><a href="basic-form-element{% url 'aindex' %}">Basic Form Elements</a>
+                                                </li>
+                                                <li><a href="{% url 'advanceformelement' %}">Advanced Form Elements</a>
+                                                </li>
+                                                <li><a href="{% url 'passwordmeter' %}">Password Meter</a>
+                                                </li>
+                                                <li><a href="{% url 'multiupload' %}">Multi Upload</a>
+                                                </li>
+                                                <li><a href="{% url 'tinymc' %}">Text Editor</a>
+                                                </li>
+                                                <li><a href="{% url 'duallistbox' %}">Dual List Box</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Appviewsmob" href="#">App views <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <ul id="Appviewsmob" class="collapse dropdown-header-top">
+                                                <li><a href="{% url 'basicformelement' %}">Basic Form Elements</a>
+                                                </li>
+                                                <li><a href="{% url 'advanceformelement' %}">Advanced Form Elements</a>
+                                                </li>
+                                                <li><a href="{% url 'passwordmeter' %}">Password Meter</a>
+                                                </li>
+                                                <li><a href="{% url 'multiupload' %}">Multi Upload</a>
+                                                </li>
+                                                <li><a href="{% url 'tinymc' %}">Text Editor</a>
+                                                </li>
+                                                <li><a href="{% url 'duallistbox' %}">Dual List Box</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <ul id="Pagemob" class="collapse dropdown-header-top">
+                                                <li><a href="{% url 'signin' %}">signin</a>
+                                                </li>
+                                                <li><a href="{% url 'signup' %}">signup</a>
+                                                </li>
+                                                <li><a href="{% url 'lock' %}">Lock</a>
+                                                </li>
+                                                <li><a href="{% url 'passwordrecovery' %}">Password Recovery</a>
+                                                </li>
+                                                <li><a href="{% url 'p404' %}">404 Page</a></li>
+                                                <li><a href="{% url 'p500' %}">500 Page</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    {% block head %}
+
+    {% endblock %}
+    <div class="footer-copyright-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-copy-right">
+                        <p>Copyright © 2018. All rights reserved. Template by <a href="https://colorlib.com/wp/templates/">{{uid.name}}</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jquery
+    ============================================ -->
+<script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+<!-- bootstrap JS
+    ============================================ -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- wow JS
+    ============================================ -->
+<script src="{% static 'js/wow.min.js' %}"></script>
+<!-- price-slider JS
+    ============================================ -->
+<script src="{% static 'js/jquery-price-slider.js' %}"></script>
+<!-- meanmenu JS
+    ============================================ -->
+<script src="{% static 'js/jquery.meanmenu.js' %}"></script>
+<!-- owl.carousel JS
+    ============================================ -->
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<!-- sticky JS
+    ============================================ -->
+<script src="{% static 'js/jquery.sticky.js' %}"></script>
+<!-- scrollUp JS
+    ============================================ -->
+<script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+<!-- counterup JS
+    ============================================ -->
+<script src="{% static 'js/counterup/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/counterup/waypoints.min.js' %}"></script>
+<script src="{% static 'js/counterup/counterup-active.js' %}"></script>
+<!-- mCustomScrollbar JS
+    ============================================ -->
+<script src="{% static 'js/scrollbar/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'js/scrollbar/mCustomScrollbar-active.js' %}"></script>
+<!-- metisMenu JS
+    ============================================ -->
+<script src="{% static 'js/metisMenu/metisMenu.min.js' %}"></script>
+<script src="{% static 'js/metisMenu/metisMenu-active.js' %}"></script>
+<!-- data table JS
+		============================================ -->
+        <script src="{% static 'js/data-table/bootstrap-table.js' %}"></script>
+        <script src="{% static 'js/data-table/tableExport.js' %}"></script>
+        <script src="{% static 'js/data-table/data-table-active.js' %}"></script>
+        <script src="{% static 'js/data-table/bootstrap-table-editable.js' %}"></script>
+        <script src="{% static 'js/data-table/bootstrap-editable.js' %}"></script>
+        <script src="{% static 'js/data-table/bootstrap-table-resizable.js' %}"></script>
+        <script src="{% static 'js/data-table/colResizable-1.5.source.js' %}"></script>
+        <script src="{% static 'js/data-table/bootstrap-table-export.js' %}"></script>
+        <!--  editable JS
+            ============================================ -->
+        <script src="{% static 'js/editable/jquery.mockjax.js' %}"></script>
+        <script src="{% static 'js/editable/mock-active.js' %}"></script>
+        <script src="{% static 'js/editable/select2.js' %}"></script>
+        <script src="{% static 'js/editable/moment.min.js' %}"></script>
+        <script src="{% static 'js/editable/bootstrap-datetimepicker.js' %}"></script>
+        <script src="{% static 'js/editable/bootstrap-editable.js' %}"></script>
+        <script src="{% static 'js/editable/xediable-active.js' %}"></script>
+        <!-- Chart JS
+            ============================================ -->
+        <script src="{% static 'js/chart/jquery.peity.min.js' %}"></script>
+        <script src="{% static 'js/peity/peity-active.js' %}"></script>
+        <!-- tab JS
+            ============================================ -->
+        <script src="{% static 'js/tab.js' %}"></script>
+<!-- morrisjs JS
+    ============================================ -->
+<script src="{% static 'js/morrisjs/raphael-min.js' %}"></script>
+<script src="{% static 'js/morrisjs/morris.js' %}"></script>
+<script src="{% static 'js/morrisjs/morris-active.js' %}"></script>
+<!-- morrisjs JS
+    ============================================ -->
+<script src="{% static 'js/sparkline/jquery.sparkline.min.js' %}"></script>
+<script src="{% static 'js/sparkline/jquery.charts-sparkline.js' %}"></script>
+<script src="{% static 'js/sparkline/sparkline-active.js' %}"></script>
+<!-- calendar JS
+    ============================================ -->
+<script src="{% static 'js/calendar/moment.min.js' %}"></script>
+<script src="{% static 'js/calendar/fullcalendar.min.js' %}"></script>
+<script src="{% static 'js/calendar/fullcalendar-active.js' %}"></script>
+<!-- plugins JS
+    ============================================ -->
+<script src="{% static 'js/plugins.js' %}"></script>
+<!-- main JS
+    ============================================ -->
+<script src="{% static 'js/main.js' %}"></script>
+<!-- tawk chat JS
+    ============================================ -->
+<script src="{% static 'js/tawk-chat.js' %}"></script>
+</body>
+
+</html>

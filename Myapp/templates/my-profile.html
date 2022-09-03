@@ -1,0 +1,132 @@
+{% extends "hade.html" %}
+{% load static %}
+{% block head %}
+        <div class="breadcome-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcome-list">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="breadcome-heading">
+                                        <form role="search" class="sr-input-func">
+                                            <input type="text" placeholder="Search..." class="search-int form-control">
+                                            <a href="#"><i class="fa fa-search"></i></a>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <ul class="breadcome-menu">
+                                        <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                        </li>
+                                        <li><span class="bread-blod">Admin Profile</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <div class="view-account">
+        <section class="module">
+            <div class="module-inner">
+                <div class="side-bar">
+                    <div class="user-info">
+                        <img class="img-profile img-circle img-responsive center-block" src="{{uid.pic.url}}" alt="">
+                        <ul class="meta list list-unstyled">
+                            <li class="name">{{uid.name}}<br><label class="label label-info">Admin</label>
+                            </li>
+                            <li class="email"><a href="#">{{uid.email}}</a></li>
+                            {% if nowtime %}
+                            <li class="activity">Last Update Profile time is : Today at {{nowtime}}</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-panel">
+                    <h2 class="title">Profile<span class="pro-label label label-warning">PRO</span></h2>
+                    <form class="form-horizontal" method="POST" action="{% url 'myprofile' %}" enctype="multipart/form-data">
+                    {% csrf_token %}    
+                        <fieldset class="fieldset">
+                            {% if msg %}
+                            <h3 class="fieldset-title">{{msg}}</h3>
+                            {% else %}
+                            <h3 class="fieldset-title">Personal Info</h3>
+                            {% endif%}
+                            <div class="form-group avatar">
+                                <figure class="figure col-md-2 col-sm-3 col-xs-12">
+                                    <img class="img-rounded img-responsive" src="{{uid.pic.url}}"  alt="">
+                                </figure>
+                                <div class="form-inline col-md-10 col-sm-9 col-xs-12">
+                                    <input type="file" class="file-uploader pull-left" name="pic">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Name</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <input type="text" class="form-control" value="{{uid.name}}" name="name">
+                                </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Email</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <input type="email" class="form-control" value="{{uid.email}}" name="email" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Gender</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <select class="form-control" value="{{uid.email}}" name="gender" required>
+                                        <option disabled="true" selected="true">Gender</option>
+                                        {% if uid.gender == 'male' %}
+                                        <option class="form-control" value="Male" selected >Male</option>
+                                        <option class="form-control" value="Female">Female</option>
+                                        <option class="form-control" value="Other">Other</option>
+                                        {% elif uid.gender == 'female' %}
+                                        <option class="form-control" value="Male" selected >Male</option>
+                                        <option class="form-control" value="Female">Female</option>
+                                        <option class="form-control" value="Other">Other</option>
+                                        {% else %}
+                                        <option class="form-control" value="Male" selected >Male</option>
+                                        <option class="form-control" value="Female">Female</option>
+                                        <option class="form-control" value="Other">Other</option>
+                                        {% endif %}
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="fieldset">
+                            <h3 class="fieldset-title">Contact Info</h3>
+                            <div class="form-group">
+                                <label class="col-md-2  col-sm-3 col-xs-12 control-label" name="mobile">Mobile</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <input type="text" class="form-control" value="{{uid.mobile}} " name="mobile">
+                                    <p class="help-block">This is the Mobile </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2  col-sm-3 col-xs-12 control-label" >Address</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <input type="text" class="form-control" value="{{uid.address}}" name="address">
+                                    <p class="help-block">This is the Address</p>
+                                </div>
+                            </div>
+                        </fieldset>
+                        
+                        <div class="form-group">
+                            <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
+                                <input class="btn btn-primary" type="submit" value="Update Profile">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}

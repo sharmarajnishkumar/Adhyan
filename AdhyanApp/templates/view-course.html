@@ -1,0 +1,101 @@
+{% include 'header.html' %}
+{% load static %}
+
+<style type="text/css">
+
+
+    *{
+     margin: 0px;
+     padding: 0px;
+    }
+    body{
+     font-family: arial;
+    }
+    .main{
+    
+     margin: 2%;
+    }
+    
+    .card{
+         width: 200px;
+         height: 300px;
+         display: block;
+         box-shadow: 2px 2px 20px black;
+         border-radius: 5px; 
+         margin: 3%;
+         float: left;
+        }
+    
+    .image img{
+      width: 100%;
+      height: 140px;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+     }
+    
+    .title{
+     
+      text-align: center;
+      padding: 10px;
+      
+     }
+    
+    h1{
+      font-size: 20px;
+     }
+    
+    .des{
+      padding: 0px;
+      text-align: center;
+     
+      padding-top: 10px;
+            border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    button{
+      margin-bottom: 10px;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding:10px;
+    }
+    button:hover{
+      background-color: black;
+      color: white;
+      transition: .5s;
+      cursor: pointer;
+    }
+    
+    </style>
+
+    <!--SECTION START-->
+    <section>
+        <div class="container com-sp pad-bot-70 pg-inn">
+            <div class="row">
+                <div class="cor">
+                    <!-- <div class="col-md-3">
+                      
+                    </div> -->
+                    <center><h1 style="text-transform: uppercase;">{{course.coname}} INDEX</h1></center><br><hr style="border:2px solid black;"><br><br>
+                    {% for i in index %}                    
+                    <a href="{% url 'views' i.id %}">
+                    <div class="main">    
+                        <!--cards -->
+                       <div class="card">                       
+                       <div class="image">
+                          <img src="{{course.copic.url}}">
+                       </div>                       
+                       <div class="des">
+                        <h4>{{i.topic}}</h4>
+                       </div>
+                       </div>
+                    </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION END-->
+
+{% include 'footer.html' %}

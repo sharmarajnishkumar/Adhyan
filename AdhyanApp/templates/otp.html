@@ -1,0 +1,52 @@
+{% include 'header.html' %}
+{% load static %}
+
+
+
+
+    <!--SECTION START-->
+    <section class="c-all p-semi p-event">
+        <div class="semi-inn">
+            <div class="semi-com semi-left">
+                <div class="all-title quote-title qu-new semi-text eve-reg-text">
+                    
+                    <div class="semi-deta eve-deta">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="semi-com semi-right" style="float:revert;position:relative;left:33%;">
+                <div class="n-form-com semi-form">
+                    <h1 style="text-align: center; color:white">OTP</h1>
+                    {% if msg %}
+                    <p>{{msg}}</p>
+                    {% endif %}
+                    <div class="col s12">
+                        <form class="form-horizontal" action="{% url 'otp' %}" method='POST'>
+                        {% csrf_token %}                 
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label style="color:white;">Enter Your OTP Here*</label>
+                                    <input type="text" class="form-control" placeholder="Please Enter your OTP" name="uotp" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="hidden" name="otp" class="form-control" value="{{otp}}">
+                                </div>
+                            </div>                            
+                            <div class="form-group mar-bot-0">
+                                <div class="col-md-12">
+                                    <i class="waves-effect waves-light light-btn waves-input-wrapper" style=""><input type="submit" value="Verify OTP Now" class="waves-button-input"></i>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION END-->
+
+
+{% include 'footer.html' %}

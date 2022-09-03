@@ -1,0 +1,70 @@
+{% include 'header.html' %}
+{% load static %}
+
+
+
+
+    <!--SECTION START-->
+    <section class="c-all p-semi p-event">
+        <div class="semi-inn">
+            <div class="semi-com semi-left">
+                <div class="all-title quote-title qu-new semi-text eve-reg-text">
+                    
+                    <div class="semi-deta eve-deta">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="semi-com semi-right" style="float:revert;position:relative;left:33%;">
+                <div class="n-form-com semi-form">
+                    <h1 style="text-align: center; color:white">Login</h1><br/>
+                    {% if msg %}
+                    <p>{{msg}}</p>
+                    {% endif %}
+                    <a href="#"><button type="button" class="btn btn-primary" style="background:#FF5722;width:100%;height:50px;font-size:16px;font:solid bold;border:none;">Login with Google</button></a>
+                    {% comment %} <button class="btn btn-primary" style="background:#FF5722;width:100%;height:50px;font-size:16px;font:solid bold;">Login with Google</button> {% endcomment %}
+                    <hr/>
+                    <div class="col s12">
+                        <form class="form-horizontal" action="{% url 'login' %}" method='POST'>
+                        {% csrf_token %}
+                            
+                            
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label style="color:white;">Email ID*</label>
+                                    <input type="email" class="form-control" placeholder="Email id" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label style="color:white;">Password*</label>
+                                    <input type="password" class="form-control" placeholder="Password" name="password" required>
+                                </div>
+                            </div>
+                            <div class="s12 log-ch-bx">
+                                <p>
+                                    <input type="checkbox" id="test5" />
+                                    <label for="test5" style="color:white;">Remember me</label><br/><br/>
+                                </p>
+                            </div>
+                            <div class="form-group mar-bot-0">
+                                <div class="col-md-12">
+                                    <i class="waves-effect waves-light light-btn waves-input-wrapper" style=""><input type="submit" value="Login Now" class="waves-button-input"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="input-field s12" style="color:white;">👉 Create Account : <a href="{% url 'register' %}" style="color:blue;"> Click Here </a></div>
+                            </div>
+                            <div>
+                                <div class="input-field s12" style="color:white;">👉 Forgot Password : <a href="{% url 'forgot' %}" style="color:blue;"> Click Here </a> </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION END-->
+
+{% include 'footer.html' %}

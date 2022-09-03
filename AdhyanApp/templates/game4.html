@@ -1,0 +1,512 @@
+
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+    p{
+    
+        
+        border-radius:10px;
+        padding:5px;
+        border:2px solid white;
+        background:lightgray;
+        color:black;
+        font-size:18px;
+    }
+    button{
+        font-family: 'Sniglet', cursive;
+    }
+    body {
+        background: linear-gradient(45deg, rgba(189,245,152,1) 0%, rgba(50,87,81,1) 100%);
+        height:100%;
+    }
+    h1,h2{
+        text-align:center;
+        margin-bottom:20px;
+        margin-top:10px;
+        font-family: 'Londrina Outline', cursive;
+    }
+    #control{width:200px;margin: 20px auto;}
+    #control h2{font-family: 'Sniglet', cursive;}
+    #control button{padding:5px;}
+    #container{
+        width:400px;
+        height:500px;
+        background: linear-gradient(to bottom, rgba(242,246,248,1) 0%, rgba(216,225,231,0.54) 49%, rgba(181,198,208,0.52) 51%, rgba(224,239,249,0.06) 100%);
+        border-radius: 16px 16px 16px 16px;
+        border: 1px solid #d6ced6;
+        box-shadow: 0px 14px 30px -9px rgba(0,0,0,0.74);
+        margin: 20px auto;
+        overflow:hidden;
+        z-index:5;
+    }
+    .screen{
+       width:inherit; 
+       height:inherit;
+    }
+    #splash{
+        display:none;
+        text-align:center;
+    }
+        #splash h1{
+            margin-top:70px;
+            font-size:80px;
+        }
+        #splash h1 .char1{
+            color:#93C683;
+        }
+        #splash h1 .char2{
+            color:rgb(75, 160, 108);
+        }
+        #splash #start{
+            background: linear-gradient(to right, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+            color:black;
+            border-radius: 10px;
+            margin-top:140px;
+            padding:10px;
+            font-size:50px;
+        }
+    #pause{
+        display:none;
+        position:absolute;
+        background: rgba(50,50,50,0.4);
+        z-index:1;
+        border-radius: 16px 16px 16px 16px;
+        text-align:center;
+    }
+        #pause h1{
+            margin-top:150px;
+            color:orange;
+        }
+        #pause button{
+            display:block;
+            background: linear-gradient(to right, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+            border-radius: 10px;
+            padding:10px;
+            color:black;
+            margin:20px auto;
+            font-size:30px;
+        }
+    #end{
+        display:none;
+    }
+    #game{
+       padding:10px 10px; 
+       position:relative;
+       display:none;
+    }
+    #game #info{
+        padding:5px 10px;
+        background:gray; 
+        margin:0 auto;
+        width:200px;
+    }
+    #game #info #pausebtn {
+        float:right;
+    }
+    #game #gamearea{
+        position:absolute;
+        bottom:50px;
+        left:50px;
+        width:300px;
+        height:300px;
+        background:gray;
+    }
+    #game #gamearea .element {
+        width:75px;
+        height:75px;
+        background: transparent;
+        border: 1px solid #d6ced6;
+        display:inline-block;
+        margin-right:-4px;
+        margin-bottom:-4px;
+        overflow:hidden;
+        font-size:30px;
+        line-height:2.2;
+        text-align:center;
+        font-family: 'Sniglet', cursive;
+        color:white;
+    } 
+</style>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2048 Simple</title>
+        <link href="https://fonts.googleapis.com/css?family=Londrina+Outline|Sniglet" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div id="container">
+            <div id="splash" class="screen">
+                <h1>20<span class="char1">4</span><span class="char2">8</span></h1>
+                <button id="start" onclick="start()">New Game</button>
+            </div>
+            <div id="pause" class="screen">
+                <h1>Paused</h1>
+                <button onclick="reset()">reset</button>
+                <button onclick="resume()">continue</button>
+            </div>
+            <div id="end" class="screen">end</div>
+            <div id="game" class="screen">
+                <h1>2048</h1>
+                <div id="info">score:
+                    <span id="score"></span>
+                    <button type="button" id="pausebtn" onclick="pause()">Pause</button>
+                </div>
+                <div id="gamearea">
+                    <div class="element"></div>
+                    <div class="element"></div>
+                    <div class="element"></div>
+                    <div class="element"></div>
+                    <div class="element"></div>
+                    <div class="element"></div>
+                    <div class="element"></div>
+                    <div class="element"></div>
+                    <div class="element"></div>
+                    <div class="element"></div>
+                    <div class="element"></div>
+                    <div class="element"></div>
+                    <div class="element"></div>
+                    <div class="element"></div>
+                    <div class="element"></div>
+                    <div class="element"></div>
+                </div>
+            </div>
+        </div>
+        <center>
+        <div id="control">
+            <h2>Control</h2>
+            <button onclick="left()">left</button>
+            <button onclick="up()">up</button>
+            <button onclick="down()">down</button>
+            <button onclick="right()">right</button>
+        </div>
+    </center>
+       <center><a href="{% url 'index' %}"> <button style="width: 100px; height: 40px; border-radius: 20px; background-color: white; border: none;" >Go Back</button></a></center>
+        <!-- <p>Arrow keys work too!</p> -->
+<script>
+    var q = 4;
+//массив элементов
+    var arr = document.getElementsByClassName("element");
+    init();
+    
+</script>
+<script>
+    window.onload = init();
+//массив элементов
+var arr = document.getElementsByClassName("element");
+
+/*Движения*/
+//сдвиг вправо
+function right(){
+    var can=false;
+    var access = false;
+    var k;
+    var score = document.getElementById("score");
+    //fixed
+    for(var i=14; i>0; i-=4){
+        //alert("step1");
+        access = false;
+        for(var j=i; j>=i-2; j--){
+            //alert("step2");
+            if(arr[j].innerHTML!==""){
+                k=j;
+                while(k<(i+1) && 
+                (parseInt(arr[k+1].innerHTML)===parseInt(arr[k].innerHTML) || arr[k+1].innerHTML==="") ){
+                    //alert("i="+i+" j="+j+" k="+k);
+                    if( parseInt(arr[k+1].innerHTML)===parseInt(arr[k].innerHTML) && access===false ){
+                        arr[k+1].innerHTML=parseInt(arr[k+1].innerHTML)+parseInt(arr[k].innerHTML);
+                        score.innerHTML=parseInt(arr[k+1].innerHTML)+parseInt(score.innerHTML);
+                        arr[k].innerHTML=""; can=true;access=true;
+                    }
+                    else if( parseInt(arr[k+1].innerHTML)===parseInt(arr[k].innerHTML) && access===true ){access===false;}
+                    else if(arr[k+1].innerHTML===""){arr[k+1].innerHTML=parseInt(arr[k].innerHTML);
+                        arr[k].innerHTML=""; can=true;
+                    }
+                    k+=1;
+                }
+            }
+        }
+        
+    }
+    if(can){av();}
+}
+
+//сдвиг влево
+function left(){
+    var can=false;
+    var access = false;
+    var k;
+    var score = document.getElementById("score");
+    //fixed
+    for(var i=13; i>0; i-=4){
+        //alert("step1");
+        access = false;
+        for(var j=i; j<=i+2; j++){
+            //alert("step2");
+            if(arr[j].innerHTML!==""){
+                k=j;
+                while(k>(i-(i%4)) && 
+                (parseInt(arr[k-1].innerHTML)===parseInt(arr[k].innerHTML) 
+                || arr[k-1].innerHTML==="")){
+                    //alert("i="+i+" j="+j+" k="+k);
+                    if( parseInt(arr[k-1].innerHTML)===parseInt(arr[k].innerHTML) && access===false ){
+                        arr[k-1].innerHTML=parseInt(arr[k-1].innerHTML)+parseInt(arr[k].innerHTML);
+                        arr[k].innerHTML=""; can=true;access=true;
+                        score.innerHTML=parseInt(arr[k-1].innerHTML)+parseInt(score.innerHTML);
+                    }
+                    else if( parseInt(arr[k-1].innerHTML)===parseInt(arr[k].innerHTML) && access===true ){access===false ;}
+                    else if(arr[k-1].innerHTML===""){arr[k-1].innerHTML=parseInt(arr[k].innerHTML);
+                        arr[k].innerHTML=""; can=true;
+                    }
+                    k-=1;
+                }
+            }
+        }
+        
+    }
+    if(can){av();}
+}
+
+//сдвиг вниз
+function down(){
+    var can=false;
+    var access = false;
+    var k;
+    var score = document.getElementById("score");
+    //fixed
+    for(var i=11; i>7; i-=1){
+        //alert(arr[i].innerHTML==="");
+        access = false;
+        for(var j=i; j>=0; j=j-4){
+            if(arr[j].innerHTML!==""){
+                k=j;
+                while(k<12 && 
+                (parseInt(arr[k+4].innerHTML)===parseInt(arr[k].innerHTML) 
+                || arr[k+4].innerHTML==="")){
+                    //alert("i="+i+" j="+j+" k="+k);
+                    if( parseInt(arr[k+4].innerHTML)===parseInt(arr[k].innerHTML) && access===false ){
+                        arr[k+4].innerHTML=parseInt(arr[k+4].innerHTML)+parseInt(arr[k].innerHTML);
+                        arr[k].innerHTML=""; can=true;access=true;
+                        score.innerHTML=parseInt(arr[k+4].innerHTML)+parseInt(score.innerHTML);
+                    }
+                    else if( parseInt(arr[k+4].innerHTML)===parseInt(arr[k].innerHTML) && access===true ){access===false;}
+                    else if(arr[k+4].innerHTML===""){arr[k+4].innerHTML=parseInt(arr[k].innerHTML);
+                        arr[k].innerHTML=""; can=true;
+                    }
+                    k+=4;
+                }
+            }
+        }
+    }
+    if(can){av();}
+}
+
+//сдвиг вверх
+function up(){
+    var can=false;
+    var access = false;
+    var k;
+    var score = document.getElementById("score");
+    //fixed
+    for(var i=7; i>3; i-=1){
+        //alert(arr[i].innerHTML==="");
+        access = false;
+        for(var j=i; j<(i+9); j+=4){
+            if(arr[j].innerHTML!==""){
+                k=j;
+                while(k>=i && 
+                (parseInt(arr[k-4].innerHTML)===parseInt(arr[k].innerHTML) 
+                || arr[k-4].innerHTML==="")){
+                    //alert("i="+i+" j="+j+" k="+k);
+                    if( parseInt(arr[k-4].innerHTML)===parseInt(arr[k].innerHTML) && access===false ){
+                        arr[k-4].innerHTML=parseInt(arr[k-4].innerHTML)+parseInt(arr[k].innerHTML);
+                        arr[k].innerHTML=""; can=true;access=true;
+                        score.innerHTML=parseInt(arr[k-4].innerHTML)+parseInt(score.innerHTML);
+                    }
+                    else if( parseInt(arr[k-4].innerHTML)===parseInt(arr[k].innerHTML) && access===true ){access===false;}
+                    else if(arr[k-4].innerHTML===""){arr[k-4].innerHTML=parseInt(arr[k].innerHTML);
+                        arr[k].innerHTML=""; can=true;
+                    }
+                    k-=4;
+                }
+            }
+        }
+    }
+    if(can){av();}
+}
+
+
+/*Неигровая Логика*/
+
+//конец игры
+function end(){alert("Your Score Is:"+document.getElementById("score").innerHTML+" Game Over");reset();}
+
+//добавить новый элемент в свободной позиции
+function random(){
+        var done=false;
+        while(done===false){
+            var num = Math.floor(Math.random()*16);
+            if(arr[num].innerHTML===""){
+                arr[num].innerHTML=2;
+                done=true;
+            }
+        }
+}
+
+//проверка доступности ячеек
+function av(){
+    var x = false;
+    var count=0;
+    for(var i=0; i<16;i++){
+        if(arr[i].innerHTML===""){x=true;count++;}
+    }
+    if(x){random();}
+    if(count===1){check()};
+}
+
+//проверка нового хода или конца игры
+function check(){
+    var x = false;
+    for(var i =0 ;i<16;i++){
+        switch(i){
+            case (0):
+                if(arr[1].innerHTML===arr[0].innerHTML||arr[4].innerHTML===arr[0].innerHTML){
+                    x=true;    
+                };
+                break;
+            case (1):
+                if(arr[1].innerHTML===arr[0].innerHTML||arr[2].innerHTML===arr[1].innerHTML||arr[1].innerHTML===arr[5].innerHTML){
+                    x=true;    
+                };
+                break;
+            case (2):
+                if(arr[2].innerHTML===arr[1].innerHTML||arr[3].innerHTML===arr[2].innerHTML||arr[2].innerHTML===arr[6].innerHTML){
+                    x=true; 
+                };
+                break;
+            case (3):
+                if(arr[3].innerHTML===arr[2].innerHTML||arr[3].innerHTML===arr[7].innerHTML){
+                    x=true; 
+                };
+                break;
+            case (4):
+                if(arr[4].innerHTML===arr[0].innerHTML||arr[4].innerHTML===arr[8].innerHTML||arr[4].innerHTML===arr[5].innerHTML){
+                  x=true;   
+                };
+                break;
+            case (5):
+                if(arr[5].innerHTML===arr[1].innerHTML||arr[5].innerHTML===arr[6].innerHTML||arr[4].innerHTML===arr[5].innerHTML||arr[5].innerHTML===arr[9].innerHTML){
+                    x=true; 
+                };
+                break;
+            case (6):
+                if(arr[6].innerHTML===arr[5].innerHTML||arr[6].innerHTML===arr[2].innerHTML||arr[6].innerHTML===arr[7].innerHTML||arr[6].innerHTML===arr[10].innerHTML){
+                    x=true; 
+                };
+                break;
+            case (7):
+                if(arr[7].innerHTML===arr[3].innerHTML||arr[7].innerHTML===arr[11].innerHTML||arr[7].innerHTML===arr[6].innerHTML){
+                    x=true; 
+                };
+                break;
+            case (8):
+                if(arr[8].innerHTML===arr[4].innerHTML||arr[8].innerHTML===arr[12].innerHTML||arr[8].innerHTML===arr[9].innerHTML){
+                    x=true; 
+                };
+                break;
+            case (9):
+                if(arr[9].innerHTML===arr[8].innerHTML||arr[9].innerHTML===arr[5].innerHTML||arr[9].innerHTML===arr[10].innerHTML||arr[9].innerHTML===arr[13].innerHTML){
+                    x=true; 
+                };
+                break;
+            case (10):
+                if(arr[10].innerHTML===arr[9].innerHTML||arr[10].innerHTML===arr[11].innerHTML||arr[10].innerHTML===arr[6].innerHTML||arr[10].innerHTML===arr[14].innerHTML){
+                    x=true; 
+                };
+                break;
+            case (11):
+                if(arr[11].innerHTML===arr[7].innerHTML||arr[11].innerHTML===arr[15].innerHTML||arr[11].innerHTML===arr[10].innerHTML){
+                    x=true; 
+                };
+                break;
+            case (12):
+                if(arr[12].innerHTML===arr[8].innerHTML||arr[12].innerHTML===arr[13].innerHTML){
+                    x=true; 
+                };
+                break;
+            case (13):
+                if(arr[13].innerHTML===arr[12].innerHTML||arr[13].innerHTML===arr[9].innerHTML||arr[13].innerHTML===arr[14].innerHTML){
+                    x=true; 
+                };
+                break;
+            case (14):
+                if(arr[14].innerHTML===arr[13].innerHTML||arr[14].innerHTML===arr[10].innerHTML||arr[14].innerHTML===arr[15].innerHTML){
+                    x=true; 
+                };
+                break;
+            case (15):
+                if(arr[15].innerHTML===arr[11].innerHTML||arr[15].innerHTML===arr[14].innerHTML){
+                    x=true; 
+                };
+                break;
+        }
+    }
+    if(!x){end();}
+}
+
+//начальное состояние  игры
+function init(){
+    var s = document.getElementById("splash");
+    s.style.display="block";
+    var arr = document.getElementsByClassName("element");
+    for(var i=0; i<16; i+=1){
+        arr[i].innerHTML="";
+    }
+    var control = document.getElementById("control");
+    control.style.display="block";
+    var score = document.getElementById("score");
+    score.innerHTML=0;
+}
+
+/*Логика в Меню*/
+
+function pause(){
+    var pause = document.getElementById("pause");
+    pause.style.display="block";
+    var control = document.getElementById("control");
+    control.style.display="none";
+}
+function reset(){
+    var pause = document.getElementById("pause");
+    pause.style.display="none";
+    init();
+}
+function start(){
+  var splash = document.getElementById("splash");
+  var game = document.getElementById("game");
+  splash.style.display="none";
+  game.style.display="block";
+  random();
+  random();
+  //alert();
+}
+function resume(){
+    var pause = document.getElementById("pause");
+    pause.style.display="none";
+    var control = document.getElementById("control");
+    control.style.display="block";
+}
+
+window.addEventListener("keydown", function(e){
+    if(e.code=="ArrowLeft"){left();}
+    else if(e.code=="ArrowRight"){right();}
+    else if(e.code=="ArrowUp"){up();}
+    else if(e.code=="ArrowDown"){down();}
+})
+</script>        
+    </body>
+</html>

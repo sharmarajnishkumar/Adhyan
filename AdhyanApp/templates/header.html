@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Adhyan</title>
+    <!-- META TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Education master is one of the best educational html template, it's suitable for all education websites like university,college,school,online education,tution center,distance education,computer education">
+    <meta name="keyword" content="education html template, university template, college template, school template, online education template, tution center template">
+    <!-- FAV ICON(BROWSER TAB ICON) -->
+    <link rel="shortcut icon" href="{% static 'images/Adhyan.png'%}" type="image/x-icon">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
+    <!-- FONTAWESOME ICONS -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
+    <!-- ALL CSS FILES -->
+    <link href="{% static 'css/materialize.css'%}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/style.css'%}" rel="stylesheet" />
+    <!-- RESPONSIVE.css ONLY FOR MOBILE AND TABLET VIEWS -->
+    <link href="{% static 'css/style-mob.css'%}" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="{% static 'js/html5shiv.js'%}"></script>
+	<script src="{% static 'js/respond.min.js'%}"></script>
+	<![endif]-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+
+    <!-- MOBILE MENU -->
+    <section>
+        <div class="ed-mob-menu">
+            <div class="ed-mob-menu-con">
+                <div class="ed-mm-left">
+                    <div class="wed-logo">
+                        <a href="{% url 'index' %}"><img src="{% static 'images/Adhyan.png'%}" alt="" style="width: 50px;padding-bottom: 10px;"/>
+						</a>
+                    </div>
+                </div>
+                <div class="ed-mm-right">
+                    <div class="ed-mm-menu">
+                        <a href="#!" class="ed-micon"><i class="fa fa-bars"></i></a>
+                        <div class="ed-mm-inn">
+                            <a href="#!" class="ed-mi-close"><i class="fa fa-times"></i></a>
+                            <h4>All Courses</h4>
+                            <ul>
+                                {% for i in courses %}    
+                                    <li><a href="{% url 'course-details' i.id %}">{{i.coname}}</a></li>
+                                {% endfor %}
+                            </ul>
+                            <h4>User Account</h4>
+                            <ul>
+                                <li><a href="#!" data-toggle="modal" data-target="#modal1">Sign In</a></li>
+                                <li><a href="#!" data-toggle="modal" data-target="#modal2">Register</a></li>
+                            </ul>
+                            <h4>All Pages</h4>
+                            <ul>
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'about' %}">About us</a></li>
+                                <li><a href="{% url 'admission' %}">Admission</a></li>
+                                <li><a href="{% url 'all-courses' %}">All courses</a></li>
+                                <li><a href="{% url 'awards' %}">Awards</a></li>
+                                <li><a href="{% url 'seminar' %}">Seminar</a></li>
+                                <li><a href="{% url 'events' %}">Events</a></li>
+                                <li><a href="{% url 'event-details' %}">Event details</a></li>
+                                <li><a href="{% url 'event-register' %}">Event register</a></li>
+                                <li><a href="{% url 'contact-us' %}">Contact us</a></li>
+                            </ul>
+                            <h4>User Profile</h4>
+                            <ul>
+                                <li><a href="{% url 'dashboard' %}">User profile</a></li>
+                                <li><a href="{% url 'db-courses' %}">Courses</a></li>
+                                <li><a href="{% url 'wish-list' %}">Wish-List</a></li>
+                                <li><a href="{% url 'db-profile' %}">Prfile</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--HEADER SECTION-->
+    <section>
+        
+        <!-- LOGO AND MENU SECTION -->
+        <div class="top-logo" data-spy="affix" data-offset-top="250">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12" style="width:110%; float:left; display: flex;">
+                        <div class="wed-logo" >
+                            <a href="{% url 'index' %}"><img src="{% static 'images/Adhyan-Logo.png'%}" alt="" style="width:180px; height:60px; padding: 7px 0px;"/>
+                            </a>
+                        </div>
+                        <div class="main-menu" style="width:60%;">
+                            <ul>
+                                <li><a href="{% url 'index' %}">Home</a>
+                                </li>
+                                <li class="about-menu"> 
+                                    <a href="{% url 'about' %}" class="mm-arr">About us</a>
+                                    <!-- MEGA MENU 1 -->
+                                    
+                                </li>
+                                
+                                <li><a href="{% url 'all-courses' %}">All Courses</a></li>
+                                <!--<li><a class='dropdown-button ed-sub-menu' href='#' data-activates='dropdown1'>Courses</a></li>-->             
+                                <li><a href="{% url 'dashboard' %}">Student</a>
+                                </li>
+                                <li><a href="{% url 'contact-us' %}">Contact us</a>
+                                </li>
+                            </ul>
+                        </div>
+                        {% if uid %}
+                        <!--== MY ACCCOUNT ==-->
+                        <div class="col-md-2 col-sm-3 col-xs-6" style="padding:5px 0px 10px 10px;" >
+                            <!-- Dropdown Trigger -->
+                            <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu' style="color:black;"><img src="{{uid.pic.url}}" alt="" />{{uid.name}}
+                            </a>
+                            <!-- Dropdown Structure -->
+                            <ul id='top-menu' class='dropdown-content top-menu-sty'>
+                                <li><a href="{% url 'dashboard' %}" class="waves-effect"><i class="fa fa-cogs" aria-hidden="true"></i>Profile</a>
+                                </li>
+                                <li><a href="{% url 'change-password' %}" class="waves-effect"><i class="fa fa-lock" aria-hidden="true"></i>Change Password</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="{% url 'logout' %}" class="ho-dr-con-last waves-effect"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {% else %}
+                        <div class="ed-com-t1-right">
+                            <ul style="padding-left:20px;">
+                                <li><a href="{% url 'login' %}" data-toggle="" data-target="">Sign In</a>
+                                </li>
+                                <li><a href="{% url 'register' %}" data-toggle="" data-target="#">Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="all-drop-down-menu">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!--END HEADER SECTION-->
+
+   
